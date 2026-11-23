@@ -27,7 +27,7 @@
             <!-- Кнопка виклику модального вікна -->
             <button id="open-modal-btn" class="btn-call">Замовити дзвінок</button>
             <!-- Кнопка «Гамбургер» (видима тільки на мобільних) -->
-            <button class="hamburger" aria-label="Меню">
+            <button class="hamburger" type="button" aria-label="Меню" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -44,7 +44,8 @@
         </header>
 
     <main>
-                <div class="swiper hero-swiper" aria-label="Акційні пропозиції NEONGEAR">
+                <section class="hero" aria-label="Головний банер">
+        <div class="swiper hero-swiper" aria-label="Акційні пропозиції NEONGEAR">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image: linear-gradient(rgba(9, 12, 25, .48), rgba(9, 12, 25, .62)), url('img/fon2.png');">
                     <h2>Твій сетап. Твої правила.</h2>
@@ -75,6 +76,9 @@
             <div class="swiper-button-next" aria-label="Наступний слайд"></div>
             <div class="swiper-pagination"></div>
         </div>
+        <a href="#about" class="scroll-down" aria-label="Прокрутити до розділу Про нас">↓</a>
+    </section>
+        
         <div class="container">
         <section id="about" class="about-section">
             <h2>Про нас</h2>
@@ -257,6 +261,25 @@
                 el: '.reviews-swiper .swiper-pagination',
                 clickable: true
             }
-        });    </script>
+        });
+    </script>
+    <script>
+        const menuButton = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        menuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('active');
+            menuButton.classList.toggle('active', isOpen);
+            menuButton.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? "hidden" : "auto";
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuButton.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = "auto";
+            });
+        });
+    </script>
 </body>
 </html>

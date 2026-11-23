@@ -383,6 +383,8 @@ hr {
     bottom: 40px;
     margin-left: -20px;
     width: 40px;
+    display: block;
+    text-decoration: none;
     text-align: center;
     font-size: 30px;
     color: #ffffff;
@@ -402,21 +404,21 @@ hr {
     }
 }
 
-/* ===== Анімація тексту в слайдері ===== */
-.swiper-slide h2,
-.swiper-slide p {
+/* ===== Анімація тексту лише в Hero-слайдері ===== */
+.hero-swiper .swiper-slide h2,
+.hero-swiper .swiper-slide p {
     opacity: 0;
     transform: translateY(20px);
     transition: 0.5s;
 }
 
-.swiper-slide-active h2,
-.swiper-slide-active p {
+.hero-swiper .swiper-slide-active h2,
+.hero-swiper .swiper-slide-active p {
     opacity: 1;
     transform: translateY(0);
 }
 
-.swiper-slide-active p {
+.hero-swiper .swiper-slide-active p {
     transition-delay: 0.3s;
 }
 
@@ -905,4 +907,18 @@ textarea {
     .best-sellers .catalog {
         grid-template-columns: 1fr;
     }
+}
+
+/* Hero-секція утримує стрілку поверх Swiper */
+.hero {
+    position: relative;
+    min-height: 0;
+    display: block;
+    padding: 0;
+    text-align: initial;
+    background: none;
+}
+
+.hero-swiper .swiper-pagination {
+    bottom: 8px;
 }
