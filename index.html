@@ -4,31 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neongear</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="top">
-   <a href="index.html">
-    <img src="img/neongear_icon.png" alt="Логотип Neongear" width="70">
-    </a>
-    <h1>Neongear</h1>
-        <p>Твій сетап. Твої правила.</p>
-<nav>
-    <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="price.html">Прайс</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="#about">Про нас</a></li>
-        <li><a href="contacts.html">Контакти</a></li>
-    </ul>
-</nav>
+  <header class="main-header">
+            <a href="index.html" class="logo">
+                <img src="img/neongear_icon.png" alt="Логотип Neongear" width="50">
+                <span>Neongear</span> 
+            </a>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="price.html">Ціни</a></li>
+                    <li><a href="services.html">Сервіс</a></li>
+                    <li><a href="index.html#about">Про нас</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+            <!-- Кнопка виклику модального вікна -->
+            <button id="open-modal-btn" class="btn-call">Замовити дзвінок</button>
+            <!-- Кнопка «Гамбургер» (видима тільки на мобільних) -->
+            <button class="hamburger" aria-label="Меню">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- Мобільне меню, що виїжджає збоку -->
+            <nav class="mobile-menu">
+                <a href="index.html">Головна</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="price.html">Ціни</a>
+                <a href="services.html">Сервіс</a>
+                <a href="index.html#about">Про нас</a>
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </header>
     </header>
 
     <main>
-        <img src="img/fon2.png" alt="Клавіатура та миша" width="400">
-        <h2 id="about">Про нас</h2>
-        <p>Neongear - це магазин <strong>ігрової периферії</strong>. У нас можна купити механічні клавіатури, миші та навушники для свого сетапу.</p>
-        <hr>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Твій сетап. <span>Твої правила.</span></h1>
+                <p>Відкрий для себе світ ігрової периферії.<br>Механічні клавіатури, точні миші та навушники для твого ідеального сетапу.</p>
+                <div class="hero-buttons">
+                    <a class="hero-button hero-button-primary" href="catalog.html">Купити зараз</a>
+                    <a class="hero-button hero-button-outline" href="#offer">Переглянути колекцію</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <h2>Про нас</h2>
+            <p>Neongear - це бренд, який створює ігрову периферію для справжніх геймерів. Ми пропонуємо широкий вибір механічних клавіатур, точних мишей та навушників, щоб кожен міг знайти свій ідеальний сетап.</p>
+            <p>Наша мета - забезпечити гравців якісними девайсами, які допоможуть досягти нових висот у світі ігор.</p>
+        </section>
 
         <h3>Наші цінності:</h3>
         <ol>

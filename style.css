@@ -1,0 +1,849 @@
+/* ===== Скидання стилів (Reset) ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p, h1, h2, h3, ul, ol, dl, table {
+    margin-bottom: 15px;
+}
+
+/* ===== Базові налаштування ===== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(19, 23, 41);
+    color: #d7dbe6;
+    line-height: 1.6;
+    padding-top: 0;
+}
+
+a {
+    color: #22d3ee;
+}
+
+/* ===== Заголовки та текст ===== */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #22d3ee;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+ul, ol, dl {
+    font-size: 18px;
+}
+
+li {
+    margin-left: 25px;
+}
+
+/* ===== Обгортка для притиснутого футера ===== */
+body, html {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ===== Шапка сайту (Flexbox) ===== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: hsl(231, 54%, 9%);
+    border-bottom: 3px solid #37F877;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: #29CDF8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-header nav {
+    margin-left: auto;
+}
+
+.main-header ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+}
+
+.main-header li {
+    margin: 0;
+}
+
+.main-header nav a {
+    text-decoration: none;
+    color: #e0e3e4;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.main-header nav a:hover {
+    color: #29CDF8;
+}
+
+.page-title {
+    margin: 10px 0 25px;
+    font-size: 36px;
+}
+
+/* ===== Секції ===== */
+.about-section {
+    background-color: #171b2e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #262b45;
+    margin: 30px 0;
+}
+
+/* ===== Центральний контейнер ===== */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #12162a;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Обтікання картинки текстом ===== */
+.float-img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 260px;
+    border-radius: 8px;
+}
+
+/* ===== Переваги (Flexbox) ===== */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.feature-card {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #262b45;
+    background: #171b2e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    color: #29CDF8;
+}
+
+/* ===== Картки товарів (Flexbox + перенесення) ===== */
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    width: calc(33.333% - 14px);
+    position: relative;
+    border: 1px solid #262b45;
+    padding: 15px;
+    text-align: center;
+    background: #171b2e;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item button {
+    margin-top: auto;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 18px;
+}
+
+.product-item p {
+    font-size: 16px;
+}
+
+.price {
+    color: #29CDF8;
+    font-weight: bold;
+    font-size: 22px !important;
+}
+
+.product-item button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #22d3ee;
+    color: #0f1220;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ===== Бейджі на товарах ===== */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* ===== Кнопка «Вгору» ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #29CDF8;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    opacity: 0.7;
+    transition: 0.3s;
+    z-index: 900;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    background-color: #22d3ee;
+}
+
+/* ===== Галерея (CSS Grid) ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 30px auto 50px;
+}
+
+.gallery-item {
+    background-color: #262b45;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.item-2 {
+    grid-column: span 2;
+}
+
+.item-5 {
+    grid-column: span 4;
+}
+
+/* ===== Слайдери Swiper ===== */
+.hero-swiper {
+    width: 100%;
+    height: 450px;
+}
+
+.hero-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    padding: 0 60px;
+}
+
+.hero-swiper h2 {
+    font-size: 42px;
+    color: #ffffff;
+    text-shadow: 0 0 20px #7c5cff;
+}
+
+.hero-swiper p {
+    font-size: 22px;
+    color: #ffffff;
+    background: rgba(15, 18, 32, 0.6);
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #22d3ee;
+}
+
+.swiper-pagination-bullet {
+    background: #ffffff;
+}
+
+.swiper-pagination-bullet-active {
+    background: #29CDF8;
+}
+
+.reviews-swiper {
+    height: 220px;
+    padding-bottom: 40px;
+}
+
+.review {
+    background: #171b2e;
+    border: 1px solid #262b45;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review h4 {
+    color: #29CDF8;
+    text-align: right;
+}
+
+/* ===== Анімація «Scroll Down» ===== */
+.hero {
+    position: relative;
+}
+
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin-left: -20px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ===== Анімація тексту в слайдері ===== */
+.swiper-slide h2,
+.swiper-slide p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s;
+}
+
+.swiper-slide-active h2,
+.swiper-slide-active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.swiper-slide-active p {
+    transition-delay: 0.3s;
+}
+
+.review p,
+.review h4 {
+    opacity: 1;
+    transform: none;
+}
+
+/* ===== Кнопка «Гамбургер» ===== */
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #22d3ee;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== Мобільне меню ===== */
+.mobile-menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    background: #161a2e;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 90px 30px;
+    transition: 0.3s;
+    z-index: 1050;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu a {
+    color: #d7dbe6;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* ===== Таблиці ===== */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.price-table caption {
+    font-size: 18px;
+    color: #8b93b0;
+    margin-bottom: 10px;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #262b45;
+    padding: 12px;
+}
+
+.price-table th {
+    background-color: #22d3ee;
+    color: #0f1220;
+}
+
+.price-table tfoot td {
+    font-weight: bold;
+    color: #29CDF8;
+}
+
+/* ===== Форма зворотного зв'язку ===== */
+.form-section form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background: #0f1220;
+    color: #d7dbe6;
+    border: 1px solid #262b45;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-section button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #22d3ee;
+    color: #0f1220;
+}
+
+.form-section button[type="reset"] {
+    background: #262b45;
+    color: #d7dbe6;
+}
+
+/* ===== Футер (Flexbox) ===== */
+.main-footer {
+    background: #161a2e;
+    border-top: 3px solid #22d3ee;
+    padding: 25px 40px;
+    margin-top: 40px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-inner p {
+    margin: 0;
+}
+
+.footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.socials ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+}
+
+.socials li {
+    margin: 0;
+}
+
+/* ===== Таби ===== */
+.product-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.product-layout img {
+    width: 40%;
+    border-radius: 8px;
+}
+
+.tabs-container {
+    flex: 1;
+}
+
+.tabs-header {
+    display: flex;
+    gap: 5px;
+    border-bottom: 1px solid #262b45;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #8b93b0;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #22d3ee;
+    color: #22d3ee;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+    min-height: 170px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Модальне вікно ===== */
+.btn-call {
+    margin-left: 30px;
+    padding: 10px 18px;
+    background: transparent;
+    color: #22d3ee;
+    border: 2px solid #22d3ee;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-call:hover {
+    background: #22d3ee;
+    color: #0f1220;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal-window {
+    background: #171b2e;
+    border: 1px solid #22d3ee;
+    padding: 30px;
+    border-radius: 10px;
+    width: 340px;
+    position: relative;
+    color: #d7dbe6;
+}
+
+.modal-window h2 {
+    color: #22d3ee;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.modal-window p {
+    font-size: 15px;
+}
+
+.modal-window input {
+    margin-bottom: 12px;
+}
+
+.modal-window button {
+    width: 100%;
+    padding: 10px;
+    background: #29CDF8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .main-header .main-menu {
+        display: none;
+    }
+
+    .btn-call {
+        display: none;
+    }
+
+    .main-header {
+        padding: 15px 20px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: 100%;
+    }
+
+    .hero-swiper h2 {
+        font-size: 28px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-5 {
+        grid-column: span 2;
+    }
+
+    .product-layout {
+        flex-direction: column;
+    }
+
+    .product-layout img {
+        width: 100%;
+    }
+}
+
+/* ===== Головний екран із фоновим зображенням ===== */
+.hero {
+    min-height: min(680px, calc(100vh - 90px));
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 55px 24px 80px;
+    text-align: center;
+    background: linear-gradient(rgba(12, 15, 29, 0.45), rgba(12, 15, 29, 0.58)), url('img/fon2.png') center / cover no-repeat;
+}
+
+.hero-content { width: min(100%, 1100px); }
+
+.hero h1 {
+    margin-bottom: 28px;
+    color: #fff;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    text-transform: none;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 span { color: #37f877; }
+
+.hero p {
+    margin: 0 auto 44px;
+    color: #fff;
+    font-size: clamp(18px, 2.2vw, 25px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.hero-button {
+    display: inline-block;
+    min-width: 190px;
+    padding: 13px 24px;
+    border: 2px solid #29cdf8;
+    border-radius: 7px;
+    color: #0f132b;
+    background: #29cdf8;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.hero-button:hover { transform: translateY(-2px); }
+
+.hero-button-outline {
+    color: #37f877;
+    border-color: #37f877;
+    background: rgba(15, 19, 43, 0.55);
+}
+
+.hero-button-outline:hover {
+    color: #0f132b;
+    background: #37f877;
+}
+
+@media (max-width: 600px) {
+    .hero { min-height: 540px; padding: 50px 18px 70px; }
+    .hero p { margin-bottom: 30px; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+}
