@@ -4,24 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прайс — Neongear</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="top">
-        <a href="index.html">
-            <img src="img/neongear_icon.png" alt="Логотип Neongear" width="70">
-        </a>
-        <h1>Прайс-лист</h1>
-        <p>Твій сетап. Твої правила.</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="index.html#about">Про нас</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="main-header">
+    <a href="index.html" class="logo">
+        <img src="img/neongear_icon.png" alt="Логотип Neongear" width="50">
+        <span>Neongear</span>
+    </a>
+    <nav aria-label="Головна навігація">
+        <ul class="main-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="price.html">Ціни</a></li>
+            <li><a href="services.html">Сервіс</a></li>
+            <li><a href="index.html#about">Про нас</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+    </nav>
+    <button type="button" class="btn-call" onclick="window.location.href='contacts.html'">Замовити дзвінок</button>
+    <button class="hamburger" type="button" aria-label="Меню" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="mobile-menu" aria-label="Мобільна навігація">
+        <a href="index.html">Головна</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="price.html">Ціни</a>
+        <a href="services.html">Сервіс</a>
+        <a href="index.html#about">Про нас</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+</header>
+<script>
+    const menuButton = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    menuButton.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('active');
+        menuButton.classList.toggle('active', isOpen);
+        menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuButton.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
 
     <main>
         <h2>Прайс-лист</h2>
@@ -68,9 +100,9 @@
             <li><a href="https://github.com/Artur090907/Web-coding" target="_blank">GitHub</a></li>
             <li><a href="https://www.youtube.com/@NEONGEARLarpshop" target="_blank">YouTube</a></li>
         </ul>
-        <p><a href="#top">Вгору</a></p>
         <p>© 2026 Neongear</p>
     </footer>
 
+    <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
 </body>
 </html>

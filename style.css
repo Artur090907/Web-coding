@@ -44,8 +44,12 @@ li {
 }
 
 /* ===== Обгортка для притиснутого футера ===== */
-body, html {
-    height: 100%;
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
 }
 
 .wrapper {
@@ -250,7 +254,7 @@ hr {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: #29CDF8;
+    background-color: #37F877;
     color: #fff;
     text-align: center;
     line-height: 50px;
