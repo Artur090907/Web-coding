@@ -24,7 +24,7 @@
             <li><a href="contacts.html">Контакти</a></li>
         </ul>
     </nav>
-    <button type="button" class="btn-call" onclick="window.location.href='contacts.html'">Замовити дзвінок</button>
+    <button type="button" id="open-modal-btn" class="btn-call">Замовити дзвінок</button>
     <button class="hamburger" type="button" aria-label="Меню" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,26 +39,7 @@
         <a href="contacts.html">Контакти</a>
     </nav>
 </header>
-<script>
-    const menuButton = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    menuButton.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('active');
-        menuButton.classList.toggle('active', isOpen);
-        menuButton.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? "hidden" : "auto";
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            menuButton.classList.remove('active');
-            menuButton.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = "auto";
-        });
-    });
-</script>
-
-    <main>
+<main>
         <div class="container">
                 <h1 class="page-title">Контакти</h1>
                 <section>
@@ -178,5 +159,20 @@
 
     <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
     </div>
+<div class="modal-overlay" id="my-modal" aria-hidden="true">
+    <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="close-modal" aria-label="Закрити">&times;</button>
+        <h2 id="modal-title">Залиште заявку</h2>
+        <p>Ми зателефонуємо вам найближчим часом.</p>
+        <form class="callback-form">
+            <label for="callback-name">Ваше ім’я</label>
+            <input id="callback-name" name="name" type="text" autocomplete="name" required>
+            <label for="callback-phone">Телефон</label>
+            <input id="callback-phone" name="phone" type="tel" autocomplete="tel" required>
+            <button type="submit">Надіслати заявку</button>
+        </form>
+    </section>
+</div>
+    <script src="script.js"></script>
 </body>
 </html>

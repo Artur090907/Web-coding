@@ -233,53 +233,20 @@
     <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script>
-        new Swiper('.hero-swiper', {
-            slidesPerView: 1,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false
-            },
-            pagination: {
-                el: '.hero-swiper .swiper-pagination',
-                clickable: true
-            },
-            navigation: {
-                nextEl: '.hero-swiper .swiper-button-next',
-                prevEl: '.hero-swiper .swiper-button-prev'
-            }
-        });
-        new Swiper('.reviews-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            breakpoints: {
-                768: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 24 }
-            },
-            pagination: {
-                el: '.reviews-swiper .swiper-pagination',
-                clickable: true
-            }
-        });
-    </script>
-    <script>
-        const menuButton = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        menuButton.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.toggle('active');
-            menuButton.classList.toggle('active', isOpen);
-            menuButton.setAttribute('aria-expanded', isOpen);
-            document.body.style.overflow = isOpen ? "hidden" : "auto";
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                menuButton.classList.remove('active');
-                menuButton.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = "auto";
-            });
-        });
-    </script>
+<div class="modal-overlay" id="my-modal" aria-hidden="true">
+    <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="close-modal" aria-label="Закрити">&times;</button>
+        <h2 id="modal-title">Залиште заявку</h2>
+        <p>Ми зателефонуємо вам найближчим часом.</p>
+        <form class="callback-form">
+            <label for="callback-name">Ваше ім’я</label>
+            <input id="callback-name" name="name" type="text" autocomplete="name" required>
+            <label for="callback-phone">Телефон</label>
+            <input id="callback-phone" name="phone" type="tel" autocomplete="tel" required>
+            <button type="submit">Надіслати заявку</button>
+        </form>
+    </section>
+</div>
+    <script src="script.js"></script>
 </body>
 </html>

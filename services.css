@@ -1,0 +1,31 @@
+:root { --services-green: #37f877; --services-navy: #111827; --services-magenta: #ff3ea5; }
+.service-page { background: #f4f6fb; color: #1b2437; }
+.service-navbar, .service-footer { background: var(--services-navy); }
+.service-navbar .nav-link { color: #d9e0ee; }
+.service-navbar .nav-link:hover, .service-navbar .nav-link.active { color: var(--services-cyan); }
+.services-logo { width: 42px; height: 42px; color: var(--services-cyan); transition: color .25s ease, transform .25s ease; }
+.navbar-brand:hover .services-logo { color: var(--services-green); transform: scale(1.1) rotate(12deg); }
+.navbar-brand span, .footer-brand { color: #29cdf8; font-weight: 800; letter-spacing: .08em; text-decoration: none; }
+.services-intro .eyebrow { color: #087f9d; font-size: .8rem; font-weight: 800; letter-spacing: .16em; }
+.services-intro h1 { color: #172033; }
+.services-intro .lead { max-width: 680px; }
+.service-card { border: 1px solid #e2e8f0; border-radius: 1rem; transition: transform .2s ease, box-shadow .2s ease; }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(17,24,39,.12) !important; }
+.service-icon { display: grid; width: 64px; height: 64px; place-items: center; border-radius: 18px; background: rgba(41,205,248,.14); color: #0787a7; font-size: 1.75rem; }
+.btn-service { border: 1px solid var(--services-cyan); background: var(--services-cyan); color: #102030; font-weight: 700; }
+.btn-service:hover { border-color: #0da6ca; background: #0da6ca; color: #fff; }
+.service-contact { background: var(--services-navy); color: #fff; }
+.service-contact p { color: #cbd5e1; }
+.service-footer { color: #cbd5e1; }
+.service-footer a:not(.footer-brand) { color: var(--services-cyan); font-size: 1.2rem; }
+.service-footer a:not(.footer-brand):hover { color: #fff; }
+/* Modal de callback compartilhé avec le script du site */
+.modal-overlay { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.72); }
+.modal-overlay.open { display: flex; }
+.modal-window { position: relative; width: min(100%, 420px); padding: 2rem; border: 1px solid #29cdf8; border-radius: 1rem; color: #e9edf7; background: #151a2d; box-shadow: 0 1rem 4rem rgba(0,0,0,.4); }
+.modal-window h2 { color: #29cdf8; }
+.modal-window p { color: #b7bfd3; }
+.modal-window .close-modal { position: absolute; top: .5rem; right: .8rem; border: 0; padding: .2rem .5rem; color: #e9edf7; background: transparent; font-size: 1.8rem; line-height: 1; }
+.callback-form { display: grid; gap: .55rem; }
+.callback-form input { margin-bottom: .5rem; padding: .65rem; border: 1px solid #434b66; border-radius: .4rem; color: #fff; background: #101426; }
+.callback-form button { padding: .7rem; border: 0; border-radius: .4rem; color: #08111a; background: #29cdf8; font-weight: 700; }

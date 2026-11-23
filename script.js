@@ -1,109 +1,83 @@
-// ===== Слайдер на першому екрані =====
-if (document.querySelector(".hero-swiper")) {
-    const swiper = new Swiper(".hero-swiper", {
-        loop: true,          // Безкінечна прокрутка
-        slidesPerView: 1,    // Видно один слайд
-        spaceBetween: 30,    // Відступ між слайдами
-
-        // Вмикаємо стрілки
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-
-        // Вмикаємо крапочки
-        pagination: {
-            el: ".hero-swiper .swiper-pagination",
-            clickable: true,
-        },
-
-        // Автопрокрутка
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
+// Swiper підключається лише на сторінках, де є відповідний слайдер.
+if (window.Swiper && document.querySelector(".hero-swiper")) {
+    new Swiper(".hero-swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: { nextEl: ".hero-swiper .swiper-button-next", prevEl: ".hero-swiper .swiper-button-prev" },
+        pagination: { el: ".hero-swiper .swiper-pagination", clickable: true },
+        autoplay: { delay: 4000, disableOnInteraction: false }
     });
 }
-
-// ===== Слайдер відгуків (адаптивний) =====
-if (document.querySelector(".reviews-swiper")) {
-    const reviewsSwiper = new Swiper(".reviews-swiper", {
+if (window.Swiper && document.querySelector(".reviews-swiper")) {
+    new Swiper(".reviews-swiper", {
         loop: true,
         spaceBetween: 20,
-        slidesPerView: 1,       // За замовчуванням (мобільний)
-        pagination: {
-            el: ".reviews-swiper .swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,   // Планшет
-            },
-            1024: {
-                slidesPerView: 3,   // Десктоп
-            },
-        },
+        slidesPerView: 1,
+        pagination: { el: ".reviews-swiper .swiper-pagination", clickable: true },
+        breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
     });
 }
 
-// ===== Мобільне меню «Гамбургер» =====
+// Мобільне меню.
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
-
-if (hamburger) {
+if (hamburger && mobileMenu) {
+    const closeMenu = () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+    };
     hamburger.addEventListener("click", () => {
-        // toggle додає клас, якщо його немає, і забирає, якщо є
-        hamburger.classList.toggle("active");
-        mobileMenu.classList.toggle("active");
-
-        // Забороняємо прокрутку сайту під відкритим меню
-        if (mobileMenu.classList.contains("active")) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        const opened = mobileMenu.classList.toggle("active");
+        hamburger.classList.toggle("active", opened);
+        hamburger.setAttribute("aria-expanded", String(opened));
+        document.body.style.overflow = opened ? "hidden" : "";
     });
+    mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 }
 
-// ===== Таби на сторінці товару =====
-const tabBtns = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
-
-tabBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        // 1. Прибираємо клас active у всіх кнопок і блоків
-        tabBtns.forEach(item => item.classList.remove("active"));
-        tabContents.forEach(item => item.classList.remove("active"));
-
-        // 2. Додаємо клас active поточній кнопці
-        btn.classList.add("active");
-
-        // 3. Знаходимо блок, який відповідає кнопці, і показуємо його
-        const tabId = btn.getAttribute("data-tab");
-        document.getElementById(tabId).classList.add("active");
-    });
+// Перемикання табів.
+document.querySelectorAll(".tabs-container").forEach(container => {
+    const buttons = container.querySelectorAll(".tab-btn");
+    const panels = container.querySelectorAll(".tab-content");
+    buttons.forEach(button => button.addEventListener("click", () => {
+        const panel = container.querySelector(`#${CSS.escape(button.dataset.tab)}`);
+        if (!panel) return;
+        buttons.forEach(item => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-selected", String(active));
+        });
+        panels.forEach(item => item.classList.toggle("active", item === panel));
+    }));
 });
 
-// ===== Модальне вікно «Замовити дзвінок» =====
+// Модальне вікно.
 const modal = document.getElementById("my-modal");
-const openBtn = document.getElementById("open-modal-btn");
-const closeBtn = document.querySelector(".close-modal");
-
-if (openBtn && modal) {
-    // Відкрити
-    openBtn.addEventListener("click", () => {
+const modalOpeners = document.querySelectorAll("#open-modal-btn");
+if (modal) {
+    const closeButton = modal.querySelector(".close-modal");
+    const openModal = () => {
         modal.classList.add("open");
-    });
-
-    // Закрити (хрестик)
-    closeBtn.addEventListener("click", () => {
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        closeButton?.focus();
+    };
+    const closeModal = () => {
         modal.classList.remove("open");
-    });
-
-    // Закрити (клік поза вікном)
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("open");
-        }
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    };
+    modalOpeners.forEach(button => button.addEventListener("click", openModal));
+    closeButton?.addEventListener("click", closeModal);
+    modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+    modal.querySelector("form")?.addEventListener("submit", event => {
+        event.preventDefault();
+        alert("Дякуємо! Вашу заявку прийнято.");
+        event.currentTarget.reset();
+        closeModal();
     });
 }

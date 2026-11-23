@@ -24,7 +24,7 @@
             <li><a href="contacts.html">Контакти</a></li>
         </ul>
     </nav>
-    <button type="button" class="btn-call" onclick="window.location.href='contacts.html'">Замовити дзвінок</button>
+    <button type="button" id="open-modal-btn" class="btn-call">Замовити дзвінок</button>
     <button class="hamburger" type="button" aria-label="Меню" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,69 +39,77 @@
         <a href="contacts.html">Контакти</a>
     </nav>
 </header>
-<script>
-    const menuButton = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    menuButton.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('active');
-        menuButton.classList.toggle('active', isOpen);
-        menuButton.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? "hidden" : "auto";
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            menuButton.classList.remove('active');
-            menuButton.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = "auto";
-        });
-    });
-</script>
-
-    <main class="container">
-        <h2>Структура каталогу</h2>
-        <ul>
-            <li>Клавіатури
-                <ul>
-                    <li>Механічні
-                        <ul>
-                            <li>NEONGEAR K75 Celestial</li>
-                            <li>NEONGEAR K1 RGB</li>
-                            <li>NEONGEAR Quantum K1 TKL</li>
-                        </ul>
-                    </li>
-                    <li>Бездротові
-                        <ul>
-                            <li>NEONGEAR K75 Celestial</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Миші
-                <ul>
-                    <li>Дротові
-                        <ul>
-                            <li>NEONGEAR M3 Pro</li>
-                        </ul>
-                    </li>
-                    <li>Бездротові
-                        <ul>
-                            <li>NEONGEAR Superstrike X3 Wireless</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Навушники
-                <ul>
-                    <li>Ігрові
-                        <ul>
-                            <li>NEONGEAR H9 Surround 7.1</li>
-                            <li>NEONGEAR H3 Lite</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+<main class="container catalog-page">
+        <section class="catalog-promo" aria-label="Акційна пропозиція">
+            <div><p>NEONGEAR • ВИБІР ГЕЙМЕРІВ</p><h2>Збери сетап, який грає на твоєму боці</h2><span>Клавіатури, миші та гарнітури для наступного рівня гри.</span></div>
+            <a href="#keyboards" class="promo-action">Обрати девайс <span aria-hidden="true">→</span></a>
+        </section>
+        <header class="page-intro">
+            <p class="eyebrow">КАТАЛОГ NEONGEAR</p>
+            <h1>Знайди <span>свій</span> ідеальний девайс</h1>
+            <p>Переглянь колекцію периферії та підбери техніку для свого стилю гри.</p>
+        </header>
+        <div class="catalog-layout">
+            <aside class="catalog-sidebar">
+                <h2>Категорії</h2>
+                <nav class="catalog-categories" aria-label="Категорії товарів">
+                    <a href="#keyboards">Клавіатури <span>3</span></a>
+                    <a href="#mice">Миші <span>2</span></a>
+                    <a href="#headsets">Навушники <span>1</span></a>
+                </nav>
+                <div class="sidebar-note"><span>NEON TIP</span><p>Не впевнений у виборі? Напиши нам — допоможемо зібрати комфортний сетап.</p><a href="contacts.html">Порадитися →</a></div>
+            </aside>
+            <div class="catalog-results">
+                <div class="catalog-toolbar"><strong>Популярні товари</strong><span>6 моделей</span></div>
+        <section class="catalog-group" id="keyboards" aria-labelledby="keyboards-title">
+            <h2 id="keyboards-title">Клавіатури</h2>
+            <div class="catalog-grid">
+                <article class="product-item"><span class="badge">Хіт</span><img src="img/klava3.png" alt="NEONGEAR K75 Celestial"><h3>NEONGEAR K75 Celestial</h3><p>Механічна клавіатура 75% з hot-swap і RGB-підсвіткою.</p><p class="price">3 299 грн</p><a class="product-action" href="#k75-title">Детальніше</a></article>
+                <article class="product-item"><span class="badge">Популярна</span><img src="img/klava2.png" alt="NEONGEAR K1 RGB"><h3>NEONGEAR K1 RGB</h3><p>Повнорозмірна механічна клавіатура з яскравим RGB.</p><p class="price">2 499 грн</p><a class="product-action" href="contacts.html">Замовити</a></article>
+                <article class="product-item"><img src="img/klava1.png" alt="NEONGEAR Quantum K1 TKL"><h3>NEONGEAR Quantum K1 TKL</h3><p>Компактний формат TKL, щоб звільнити місце для миші.</p><p class="price">2 290 грн</p><a class="product-action" href="contacts.html">Замовити</a></article>
+            </div>
+        </section>
+        <section class="catalog-group" id="mice" aria-labelledby="mice-title">
+            <h2 id="mice-title">Ігрові миші</h2>
+            <div class="catalog-grid">
+                <article class="product-item"><span class="badge">Sale</span><img src="img/blog_mouse_art.png" alt="NEONGEAR M3 Pro"><h3>NEONGEAR M3 Pro</h3><p>Легка дротова миша із сенсором 26 000 DPI.</p><p class="price">1 299 грн</p><a class="product-action" href="contacts.html">Замовити</a></article>
+                <article class="product-item"><img src="img/blog_mouse_art.png" alt="NEONGEAR Superstrike X3 Wireless"><h3>NEONGEAR Superstrike X3 Wireless</h3><p>Бездротова миша для точного контролю без зайвих кабелів.</p><p class="price">1 899 грн</p><a class="product-action" href="contacts.html">Замовити</a></article>
+            </div>
+        </section>
+        <section class="catalog-group" id="headsets" aria-labelledby="headsets-title">
+            <h2 id="headsets-title">Навушники</h2>
+            <div class="catalog-grid">
+                <article class="product-item"><span class="badge">Хіт</span><img src="img/blog_headphones_art.png" alt="NEONGEAR H9 Surround 7.1"><h3>NEONGEAR H9 Surround 7.1</h3><p>Ігрова гарнітура з об’ємним звуком 7.1.</p><p class="price">2 799 грн</p><a class="product-action" href="contacts.html">Замовити</a></article>
+            </div>
+        </section>
+            </div>
+        </div>
+        <section class="product-page" aria-labelledby="k75-title">
+    <h2 id="k75-title">NEONGEAR K75 Celestial</h2>
+    <div class="product-layout">
+        <img src="img/klava3.png" alt="Клавіатура NEONGEAR K75 Celestial">
+        <div class="tabs-container">
+            <div class="tabs-header" role="tablist" aria-label="Інформація про товар">
+                <button type="button" class="tab-btn active" data-tab="desc" role="tab" aria-selected="true">Опис</button>
+                <button type="button" class="tab-btn" data-tab="chars" role="tab" aria-selected="false">Характеристики</button>
+                <button type="button" class="tab-btn" data-tab="reviews" role="tab" aria-selected="false">Відгуки</button>
+            </div>
+            <div class="tabs-body">
+                <div id="desc" class="tab-content active" role="tabpanel">
+                    <p>K75 Celestial — компактна механічна клавіатура формату 75% у алюмінієвому корпусі. Підтримує hot-swap перемикачів, має програмовану RGB-підсвітку та три режими підключення: USB-C, Bluetooth і радіоканал 2,4 ГГц.</p>
+                </div>
+                <div id="chars" class="tab-content" role="tabpanel">
+                    <ul><li>Формат: 75% (84 клавіші)</li><li>Перемикачі: Neon Linear, hot-swap</li><li>Частота опитування: 1000 Гц</li><li>Акумулятор: 4000 мА·год</li><li>Вага: 1,1 кг</li></ul>
+                </div>
+                <div id="reviews" class="tab-content" role="tabpanel">
+                    <p><strong>Олександр:</strong> «Найкраща клавіатура, яку я тримав у руках.»</p>
+                    <p><strong>Ірина:</strong> «Тихий та приємний звук, підсвітка дуже яскрава.»</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="price">3 499 грн</p>
+</section>
         <hr>
 
         <h2>Як зробити замовлення</h2>
@@ -124,6 +132,7 @@
             <li>NEONGEAR K75 Celestial</li>
             <li>NEONGEAR K1 RGB</li>
         </ol>
+
         <hr>
 
         <h2>Словник геймера</h2>
@@ -161,6 +170,21 @@
 </footer>
 
     <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
+<div class="modal-overlay" id="my-modal" aria-hidden="true">
+    <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="close-modal" aria-label="Закрити">&times;</button>
+        <h2 id="modal-title">Залиште заявку</h2>
+        <p>Ми зателефонуємо вам найближчим часом.</p>
+        <form class="callback-form">
+            <label for="callback-name">Ваше ім’я</label>
+            <input id="callback-name" name="name" type="text" autocomplete="name" required>
+            <label for="callback-phone">Телефон</label>
+            <input id="callback-phone" name="phone" type="tel" autocomplete="tel" required>
+            <button type="submit">Надіслати заявку</button>
+        </form>
+    </section>
+</div>
+    <script src="script.js"></script>
     </div>
 </body>
 </html>
