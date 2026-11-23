@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neongear</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,16 +44,37 @@
         </header>
 
     <main>
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-content">
-                <h1 id="hero-title">Твій сетап. <span>Твої правила.</span></h1>
-                <p>Відкрий для себе світ ігрової периферії.<br>Механічні клавіатури, точні миші та навушники для твого ідеального сетапу.</p>
-                <div class="hero-buttons">
-                    <a class="hero-button hero-button-primary" href="catalog.html">Купити зараз</a>
-                    <a class="hero-button hero-button-outline" href="#offer">Переглянути колекцію</a>
+                <div class="swiper hero-swiper" aria-label="Акційні пропозиції NEONGEAR">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(9, 12, 25, .48), rgba(9, 12, 25, .62)), url('img/fon2.png');">
+                    <h2>Твій сетап. Твої правила.</h2>
+                    <p>Знижки до 30% на клавіатури серії K75.</p>
+                    <div class="hero-buttons">
+                        <a class="hero-button hero-button-primary" href="catalog.html">Купити зараз</a>
+                        <a class="hero-button hero-button-outline" href="#best-sellers-title">Переглянути колекцію</a>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(9, 12, 25, .48), rgba(9, 12, 25, .62)), url('img/blog_mouse_art.png');">
+                    <h2>Кіберспортивна точність</h2>
+                    <p>Миші з сенсором 26 000 DPI для точного контролю.</p>
+                    <div class="hero-buttons">
+                        <a class="hero-button hero-button-primary" href="catalog.html">Купити зараз</a>
+                        <a class="hero-button hero-button-outline" href="#best-sellers-title">Переглянути колекцію</a>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(9, 12, 25, .48), rgba(9, 12, 25, .62)), url('img/blog_headphones_art.png');">
+                    <h2>Звук, що дає перевагу</h2>
+                    <p>Гарнітура H9 з об'ємним звуком 7.1.</p>
+                    <div class="hero-buttons">
+                        <a class="hero-button hero-button-primary" href="catalog.html">Купити зараз</a>
+                        <a class="hero-button hero-button-outline" href="#best-sellers-title">Переглянути колекцію</a>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="swiper-button-prev" aria-label="Попередній слайд"></div>
+            <div class="swiper-button-next" aria-label="Наступний слайд"></div>
+            <div class="swiper-pagination"></div>
+        </div>
         <div class="container">
         <section id="about" class="about-section">
             <h2>Про нас</h2>
@@ -128,8 +150,47 @@
                     <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
                 </div>
             </div>
-        </section>section>section>
+        </section>
+        <hr>
+        <h2>Галерея сетапів</h2>
+                <div class="gallery">
+            <div class="gallery-item item-1"><img src="img/setup1.png" alt="Ігровий сетап NEONGEAR 1"></div>
+            <div class="gallery-item item-2"><img src="img/setup2.png" alt="Ігровий сетап NEONGEAR 2"></div>
+            <div class="gallery-item item-3"><img src="img/setup3.png" alt="Ігровий сетап NEONGEAR 3"></div>
+            <div class="gallery-item item-4"><img src="img/setup4.png" alt="Ігровий сетап NEONGEAR 4"></div>
+            <div class="gallery-item item-5"><img src="img/setup5.png" alt="Ігровий сетап NEONGEAR 5"></div>
+            <div class="gallery-item item-6"><img src="img/setup6.png" alt="Ігровий сетап NEONGEAR 6"></div>
+        </div>
         
+        <section class="reviews-section" aria-labelledby="reviews-title">
+            <h2 id="reviews-title">Відгуки покупців</h2>
+            <div class="swiper reviews-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide review">
+                        <p>«Клавіатура K75 — найкраща покупка року. Звук перемикачів просто космос.»</p>
+                        <h4>Олександр</h4>
+                    </div>
+                    <div class="swiper-slide review">
+                        <p>«Замовила гарнітуру H9 увечері, а зранку вже грала. Дякую за швидкість!»</p>
+                        <h4>Марія</h4>
+                    </div>
+                    <div class="swiper-slide review">
+                        <p>«У шоурумі допомогли підібрати мишу під хват. Тепер не промахуюсь.»</p>
+                        <h4>Дмитро</h4>
+                    </div>
+                    <div class="swiper-slide review">
+                        <p>«Дуже зручна клавіатура, підсвітка та швидка доставка. Рекомендую!»</p>
+                        <h4>Ірина</h4>
+                    </div>
+                    <div class="swiper-slide review">
+                        <p>«Допомогли обрати гарнітуру для ігор. Звук і мікрофон чудові.»</p>
+                        <h4>Андрій</h4>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
         <hr>
 
         <h2>Промо відео</h2>
@@ -167,5 +228,35 @@
 
     <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper('.hero-swiper', {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.hero-swiper .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.hero-swiper .swiper-button-next',
+                prevEl: '.hero-swiper .swiper-button-prev'
+            }
+        });
+        new Swiper('.reviews-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 24 }
+            },
+            pagination: {
+                el: '.reviews-swiper .swiper-pagination',
+                clickable: true
+            }
+        });    </script>
 </body>
 </html>
