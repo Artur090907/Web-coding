@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="main-header">
+    <div class="wrapper">
+    <header class="main-header">
             <a href="index.html" class="logo">
                 <img src="img/neongear_icon.png" alt="Логотип Neongear" width="50">
                 <span>Neongear</span> 
@@ -41,7 +41,6 @@
                 <a href="contacts.html">Контакти</a>
             </nav>
         </header>
-    </header>
 
     <main>
         <section class="hero" aria-labelledby="hero-title">
@@ -61,17 +60,50 @@
             <p>Наша мета - забезпечити гравців якісними девайсами, які допоможуть досягти нових висот у світі ігор.</p>
         </section>
 
-        <h3>Наші цінності:</h3>
-        <ol>
-            <li>Чесний вибір. Ми продаємо лише те, що перевірили в ігровій практиці.</li>
-            <li>Стиль без компромісів. Девайс має виглядати так само добре, як і працювати.</li>
-            <li>Підтримка геймерів. Допомагаємо обрати девайс під ваш стиль гри та даємо гарантію <strong>12 місяців</strong>.</li>
-        </ol>
+        <h2 id="advantages-title">Переваги</h2>
+        <section class="features" id="advantages" aria-labelledby="advantages-title">
+            <div class="feature-card">
+                <h3>Швидкість</h3>
+                <p>Доставка по Києву за 3 години, по Україні — за 1–2 дні.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Якість</h3>
+                <p>Офіційна гарантія 2 роки на всі товари NEONGEAR.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Тест-драйв</h3>
+                <p>Будь-який девайс можна спробувати в нашому шоурумі.</p>
+            </div>
+        </section>
         <hr>
 
         <section class="best-sellers" aria-labelledby="best-sellers-title">
             <h2 id="best-sellers-title">Хіти продажів</h2>
             <div class="catalog">
+                <div class="product-item">
+                    <span class="badge">New</span>
+                    <img src="img/klava3.png" alt="NEONGEAR K75 Celestial">
+                    <h3>NEONGEAR K75 Celestial</h3>
+                    <p>Механічна клавіатура формату 75%.</p>
+                    <p class="price">3 299 грн</p>
+                    <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
+                </div>
+                <div class="product-item">
+                    <span class="badge">Sale</span>
+                    <img src="img/blog_mouse_art.png" alt="NEONGEAR M3 Pro">
+                    <h3>NEONGEAR M3 Pro</h3>
+                    <p>Легка дротова миша, сенсор 26 000 DPI.</p>
+                    <p class="price">1 299 грн</p>
+                    <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
+                </div>
+                <div class="product-item">
+                    <span class="badge">Хіт</span>
+                    <img src="img/blog_headphones_art.png" alt="NEONGEAR H9 Surround 7.1">
+                    <h3>NEONGEAR H9 Surround 7.1</h3>
+                    <p>Ігрова гарнітура з об'ємним звуком 7.1.</p>
+                    <p class="price">2 799 грн</p>
+                    <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
+                </div>
                 <div class="product-item">
                     <span class="badge">Хіт</span>
                     <img src="img/klava2.png" alt="NEONGEAR K1 RGB">
@@ -81,11 +113,11 @@
                     <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
                 </div>
                 <div class="product-item">
-                    <span class="badge">New</span>
-                    <img src="img/klava3.png" alt="NEONGEAR K75 Celestial">
-                    <h3>NEONGEAR K75 Celestial</h3>
-                    <p>Механічна клавіатура формату 75%.</p>
-                    <p class="price">3 299 грн</p>
+                    <span class="badge">Sale</span>
+                    <img src="img/blog_mouse_art.png" alt="NEONGEAR Superstrike X3 Wireless">
+                    <h3>NEONGEAR Superstrike X3 Wireless</h3>
+                    <p>Бездротова ігрова миша.</p>
+                    <p class="price">1 899 грн</p>
                     <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
                 </div>
                 <div class="product-item">
@@ -96,7 +128,7 @@
                     <button type="button" onclick="window.location.href='catalog.html'">У кошик</button>
                 </div>
             </div>
-        </section>
+        </section>section>section>
         
         <hr>
 
@@ -112,21 +144,28 @@
             <source src="audio/music.mp3" type="audio/mpeg">
             Ваш браузер не підтримує аудіо.
         </audio>
-        /div>
+        </div>
     </main>
 
-    <footer>
-        <p>Київ, вул. Хрещатик, 1<br>
-        Artursorokun07@Gmail.com</p>
+    <footer class="main-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo">NEONGEAR</a>
+            <p>Київ, вул. Хрещатик, 1<br><a href="mailto:Artursorokun07@Gmail.com">Artursorokun07@Gmail.com</a></p>
+        </div>
+        <div class="socials">
+            <p>Ми в мережі:</p>
+            <ul>
+                <li><a href="https://github.com/Artur090907/Web-coding" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.youtube.com/@NEONGEARLarpshop" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="mailto:Artursorokun07@Gmail.com">Пошта</a></li>
+            </ul>
+        </div>
         <p>© 2026 Neongear</p>
-        <p>Ми в мережі:</p>
-<ul>
-    <li><a href="https://github.com/Artur090907/Web-coding" target="_blank">GitHub</a></li>
-    <li><a href="https://www.youtube.com/@NEONGEARLarpshop" target="_blank">YouTube</a></li>
-    <li><a href="mailto:Artursorokun07@Gmail.com">Пошта</a></li>
-</ul>
-    </footer>
+    </div>
+</footer>
 
     <a href="#" class="back-to-top" aria-label="Вгору">↑</a>
+    </div>
 </body>
 </html>

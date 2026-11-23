@@ -578,11 +578,22 @@ textarea {
     margin: 0;
 }
 
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+}
+
 .footer-logo {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     color: #ffffff;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .socials {
